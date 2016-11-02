@@ -1,0 +1,11 @@
+<header class="header">
+	<h1 class="header__title">GRE Checklist</h1>
+	<span id="butRefresh" class="headerButton" [routerLink]="['/checks']" aria-label="Refresh"><a ></a></span>
+	<span id="butAdd" class="headerButton" [routerLink]="['/new']" aria-label="Add"><a ></a></span>
+	<button *ngIf="!(af.auth | async)" id="butLogin" (click)="login()" class="headerButton" md-tooltip="Login!" aria-label="Login"></button>
+	<button *ngIf="af.auth | async" id="butLogout" (click)="logout()" class="headerButton" md-tooltip="Signout" aria-label="Logout"></button>
+</header>
+
+<div class="container">
+<router-outlet></router-outlet>
+</div>

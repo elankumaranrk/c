@@ -1,0 +1,36 @@
+.cardlist
+{
+    margin-top:70px;
+     min-width:370px;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content:center;
+     align-content: space-around;
+}
+
+.card
+{
+    padding:20px;
+    max-width:370px;
+     display: inline-flex;
+     flex-direction: column;
+}
+
+.login
+{
+     background-color: darkblue;
+    background:url(back.jpg) center center no-repeat;
+    background-size: cover;
+   
+    color: snow;
+    top:0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}

@@ -1,0 +1,30 @@
+<div style="display:flex;flex-direction:row;align-items:space-around;">
+<div style="max-width:450px;">
+	<md-card style="padding:10px">
+		<md-card-title-group>
+			<md-toolbar color="primary">New Note</md-toolbar>
+		</md-card-title-group>
+		<md-card-content style="padding:20px">
+			<form name="newform" (submit)="saveNote()">
+				<md-input class="demo-full-width" placeholder="On Date" name="ondate" type="date" [(ngModel)]="newnote.ondate">
+				</md-input>
+
+				<table style="width: 100%" cellspacing="0">
+					<tr>
+						<td>
+							<md-input [(ngModel)]="newnote.otherdesc" name="otherdesc" placeholder="Primary Task" style="width: 100%"></md-input>
+						</td>
+						<td>
+							<md-input [(ngModel)]="newnote.mandesc" name="mandesc" placeholder="On Manhatten Book" style="width: 100%"></md-input>
+						</td>
+					</tr>
+				</table>
+				<p>
+					<md-input class="demo-full-width" name="testdesc" placeholder="Test" [(ngModel)]="newnote.testdesc"></md-input>
+				</p>
+			</form>
+            <button  (click)="saveNote()" type="submit" [disabled]="!newnote.ondate">Add it</button>
+		</md-card-content>
+	</md-card>
+</div>
+</div>
