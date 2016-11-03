@@ -39,12 +39,12 @@ export class DetailComponent implements OnInit {
         this._router.navigate(['/checks']);
     }
 
-    ngOnInit() { this.notes = this.af.database.list('notes');
+    ngOnInit() { 
         console.log(this._route.snapshot.params['id']);
         this.url = '/notes/'+ this._route.snapshot.params['id'];
         console.log(this.url);
-        this.note2 = this.af.database.object(this.url);
-         this.note2.subscribe(item=> {this.note = item;
+        this.af.database.object(this.url).subscribe(item=> {this.note = item;
              console.log('subscribed...');
-             this.showPage = true;}); }
+             this.showPage = true;});
+          }
 }
