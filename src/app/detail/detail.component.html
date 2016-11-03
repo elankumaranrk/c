@@ -1,7 +1,6 @@
-<div *ngIf="af.auth | async" class="cardlist">
-	<div *ngFor="let note of notes | async | reverse">
-		<div class="card">
-			<md-card>
+
+		<div class="detailcard" *ngIf="showPage" >
+			<md-card style="max-width: 400px;"> 
 				<md-card-header>
 					<!--<img md-card-avatar src="path/to/img.png">-->
 					<!--<md-card-title>On</md-card-title>-->
@@ -11,42 +10,36 @@
 				<img md-card-image src="study.jpg">
 				<md-card-content style="display:flex; flex-direction:column">
                     
-                    <md-checkbox [checked]="note.words">
+                    <md-checkbox  [(ngModel)]="note.words">
                             Study GRE Words with Kumaran
                      </md-checkbox>
 
-                     <md-checkbox [checked]="note.rc">
+                     <md-checkbox [(ngModel)]="note.rc">
                             Do a Reading Comprehension
                      </md-checkbox>
 
-                     <md-checkbox [checked]="note.tenwords">
+                     <md-checkbox  [(ngModel)]="note.tenwords">
                             Learn 10 new words
                      </md-checkbox>
 
-                     <md-checkbox [checked]="note.editorial">
+                     <md-checkbox  [(ngModel)]="note.editorial">
                             Read an editorial page
                      </md-checkbox>
 
 
-                     <md-checkbox [checked]="note.mancomp">
+                     <md-checkbox  [(ngModel)]="note.mancomp">
                             {{note.mandesc}}
                      </md-checkbox>
-                     <md-checkbox [checked]="note.othercomp">
+                     <md-checkbox  [(ngModel)]="note.othercomp">
                             {{note.otherdesc}}
                      </md-checkbox>
-                     <md-checkbox [checked]="note.testcomp">
+                     <md-checkbox [(ngModel)]="note.testcomp">
                             {{note.testdesc}}
                      </md-checkbox>
 				</md-card-content>
                                 <md-card-actions>
-        <button md-button [routerLink]="['/detail/', note.$key]">LIKE</button>
-        <button md-button>SHARE</button>
+        <button md-button (click)="save()">SAVE</button>
+        
    </md-card-actions>
 			</md-card>
 		</div>
-	</div>
-</div>
-
-<div *ngIf="!(af.auth | async)" id="butLogin" (click)="login()" class="login">
-	<h1> Login to see your checklist</h1>
-</div>

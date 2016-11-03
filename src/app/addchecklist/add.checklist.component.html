@@ -1,9 +1,11 @@
-<div style="display:flex;flex-direction:row;align-items:space-around;">
-<div style="max-width:450px;">
-	<md-card style="padding:10px">
-		<md-card-title-group>
-			<md-toolbar color="primary">New Note</md-toolbar>
-		</md-card-title-group>
+
+<div class="addcard">
+	<md-card>
+		
+			
+					<md-card-title>Add a new checklist</md-card-title>
+			
+		<md-card-subtitle>Add a new checklist</md-card-subtitle>
 		<md-card-content style="padding:20px">
 			<form name="newform" (submit)="saveNote()">
 				<md-input class="demo-full-width" placeholder="On Date" name="ondate" type="date" [(ngModel)]="newnote.ondate">
@@ -27,4 +29,5 @@
 		</md-card-content>
 	</md-card>
 </div>
-</div>
+
+

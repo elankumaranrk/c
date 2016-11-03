@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { checklist } from '../shared/model/checklist';
 
 @Component({
-    templateUrl: 'add.checklist.component.html'
+    templateUrl: 'add.checklist.component.html',
+    styleUrls : ['add.checklist.component.css'] 
 })
 export class NewChecklistComponent implements OnInit {
     newnote: checklist;
