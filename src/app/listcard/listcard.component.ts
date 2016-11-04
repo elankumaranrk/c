@@ -21,6 +21,19 @@ export class ListCardComponent {
     this.af.auth.login();
   }
 
+  convert(date1:string):string
+  {
+    var a = new Date(date1);
+    a.setTime(a.getTime() + (5*60*60*1000));
+    return a.toDateString();
+  }
+   isToday(date1:string):boolean
+  {
+    var a = new Date(date1);
+    a.setTime(a.getTime() + (5*60*60*1000));
+    return (new Date().getDate() == a.getDate() && new Date().getMonth() == a.getMonth() && new Date().getFullYear() == a.getFullYear());
+  }
+
    updateItem(key: string, newText: string) {
     this.notes.update(key, { text: newText });
   }

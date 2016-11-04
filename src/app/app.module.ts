@@ -15,10 +15,10 @@ import {ReverseCheckList} from './shared/checklistfilter';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyDF5JT70O0qhbRt3Zbrt_j2ku_kh4T4TlU",
-    authDomain: "kumaran-gre.firebaseapp.com",
-    databaseURL: "https://kumaran-gre.firebaseio.com",
-    storageBucket: "kumaran-gre.appspot.com"
+     apiKey: "AIzaSyB0kyb84FAtqyBKPQrADVTIDHlaaz-_a10",
+    authDomain: "common-gre.firebaseapp.com",
+    databaseURL: "https://common-gre.firebaseio.com",
+    storageBucket: "common-gre.appspot.com"
 };
 
 const myFirebaseAuthConfig = {

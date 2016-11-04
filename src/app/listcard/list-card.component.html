@@ -7,40 +7,48 @@
 					<!--<md-card-title>On</md-card-title>-->
 
 				</md-card-header>
-				<md-card-subtitle>On {{note.ondate}}</md-card-subtitle>
+                                <md-card-title>{{convert(note.ondate) | date: 'MMMM dd, yyyy'}}</md-card-title>
+				<md-card-subtitle>{{convert(note.ondate) | date: 'MMMM dd, yyyy'}}</md-card-subtitle>
 				<img md-card-image src="study.jpg">
 				<md-card-content style="display:flex; flex-direction:column">
                     
-                    <md-checkbox [checked]="note.words">
-                            Study GRE Words with Kumaran
+                    <md-checkbox *ngIf="isToday(note.ondate) || !note.words" [disabled]="true" color="primary" [checked]="note.words">
+                         <span *ngIf="note.words">  <del> Study GRE Words with Kumaran </del> </span>
+                          <span *ngIf="!note.words">  Study GRE Words with Kumaran  </span>
                      </md-checkbox>
 
-                     <md-checkbox [checked]="note.rc">
-                            Do a Reading Comprehension
+                     <md-checkbox *ngIf="isToday(note.ondate) || !note.rc" [disabled]="true" color="primary" [checked]="note.rc">
+                                <span *ngIf="note.rc">  <del> Do a Reading Comprehension </del> </span>
+                                <span *ngIf="!note.rc">  Do a Reading Comprehension  </span>
+
                      </md-checkbox>
 
-                     <md-checkbox [checked]="note.tenwords">
-                            Learn 10 new words
+                     <md-checkbox  *ngIf="isToday(note.ondate) || !note.tenwords" [disabled]="true" color="primary" [checked]="note.tenwords">
+                              <span *ngIf="note.tenwords">  <del> Learn 10 new words </del> </span>
+                            <span *ngIf="!note.tenwords">  <span> Learn 10 new words </span> </span>
                      </md-checkbox>
 
-                     <md-checkbox [checked]="note.editorial">
-                            Read an editorial page
+                     <md-checkbox *ngIf="isToday(note.ondate) || !note.editorial" [disabled]="true" color="primary" [checked]="note.editorial">
+                              <span *ngIf="note.editorial">  <del> Read an editorial page </del> </span>
+                            <span *ngIf="!note.editorial">  <span> Read an editorial page </span> </span>
                      </md-checkbox>
 
 
-                     <md-checkbox [checked]="note.mancomp">
-                            {{note.mandesc}}
+                     <md-checkbox *ngIf="isToday(note.ondate) || !note.mancomp" [disabled]="true" color="primary" [checked]="note.mancomp">
+                              <span *ngIf="note.mancomp">  <del>  {{note.mandesc}} </del> </span>
+                            <span *ngIf="!note.mancomp">  <span>  {{note.mandesc}} </span> </span>
                      </md-checkbox>
-                     <md-checkbox [checked]="note.othercomp">
-                            {{note.otherdesc}}
+                     <md-checkbox *ngIf="isToday(note.ondate) || !note.othercomp" [disabled]="true" color="primary" [checked]="note.othercomp">
+                              <span *ngIf="note.othercomp">   <del>  {{note.otherdesc}} </del> </span>
+                           <span *ngIf="!note.othercomp">   <span>  {{note.otherdesc}} </span> </span>
                      </md-checkbox>
-                     <md-checkbox [checked]="note.testcomp">
-                            {{note.testdesc}}
+                     <md-checkbox *ngIf="isToday(note.ondate) || !note.testcomp" [disabled]="true" color="primary" [checked]="note.testcomp">
+                              <span *ngIf="note.testcomp">  Test: <del> {{note.testdesc}} </del> </span>
+                             <span *ngIf="!note.testcomp">  Test: <span> {{note.testdesc}} </span> </span>
                      </md-checkbox>
 				</md-card-content>
                                 <md-card-actions>
-        <button md-button [routerLink]="['/detail/', note.$key]">LIKE</button>
-        <button md-button>SHARE</button>
+        <button md-button [routerLink]="['/detail/', note.$key]">EDIT</button>
    </md-card-actions>
 			</md-card>
 		</div>
